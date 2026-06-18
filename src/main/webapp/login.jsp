@@ -4,23 +4,40 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CampusShare</title>
+<title>CampusShare ログイン</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<h1>CampusShare</h1>
+<div class="header">
+    <h1>Campus<span>Share</span></h1>
+    <p>不要になったモノを、必要な人へ。</p>
+</div>
 
-<form action="login" method="post">
+<div class="container">
+    <div class="card">
+        <h2>ログイン</h2>
 
-    学籍番号：
-	<input type="text" name="studentId"><br><br>
+        <% if (request.getAttribute("error") != null) { %>
+            <p style="color:red;"><%= request.getAttribute("error") %></p>
+        <% } %>
 
-	パスワード：
-	<input type="password" name="password"><br><br>
+        <form action="login" method="post">
+            <p>
+                学籍番号：<br>
+                <input type="text" name="studentId" required>
+            </p>
 
-	<input type="submit" value="ログイン">
-</form>
+            <p>
+                パスワード：<br>
+                <input type="password" name="password" required>
+            </p>
+
+            <input type="submit" value="ログイン">
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
