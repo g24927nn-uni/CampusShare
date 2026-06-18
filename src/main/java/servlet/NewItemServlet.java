@@ -16,12 +16,16 @@ public class NewItemServlet extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
 
+
+        String idStr = request.getParameter("id");
+        int id = Integer.parseInt(idStr);
+
         String name = request.getParameter("name");
         String category = request.getParameter("category");
         String detail = request.getParameter("description");
         String price = request.getParameter("price");
 
-        Item item = new Item(name, category, detail, price);
+        Item item = new Item(id, name, category, detail, price);
         ItemStore.addItem(item);
 
         response.sendRedirect("itemList.jsp");
