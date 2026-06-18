@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: #f3f8f7;
+    color: #12343b;
+}
+
+.header {
+    background: #0f4963;
+    color: white;
+    padding: 28px 40px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.header span {
+    color: #35c98b;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.item-card {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.item-card img {
+    width: 120px;
+    border-radius: 12px;
+}
+
+.button,
+button,
+input[type="submit"] {
+    background: #0f766e;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: #095f59;
+}
+
+input,
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid #cfd8d6;
+    border-radius: 8px;
+    margin-top: 6px;
+}
+
+a {
+    color: #0f766e;
+    font-weight: bold;
+}
+.large-button {
+    display: inline-block;
+    font-size: 24px;
+    padding: 18px 40px;
+    margin-top: 12px;
+    font-weight: bold;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+}
