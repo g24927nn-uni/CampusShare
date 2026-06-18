@@ -1,4 +1,5 @@
 package servlet;
+
 import java.io.IOException;
 
 import jakarta.servlet.ServletException;
@@ -17,12 +18,12 @@ public class NewItemServlet extends HttpServlet {
 
         String name = request.getParameter("name");
         String category = request.getParameter("category");
-        String description = request.getParameter("description");
+        String detail = request.getParameter("description");
         String price = request.getParameter("price");
 
-        // とりあえず登録完了メッセージとして渡す（DBなし）
-        request.setAttribute("message", "商品「" + name + "」を登録しました");
+        Item item = new Item(name, category, detail, price);
+        ItemStore.addItem(item);
 
-        request.getRequestDispatcher("message.jsp").forward(request, response);
+        response.sendRedirect("itemList.jsp");
     }
 }

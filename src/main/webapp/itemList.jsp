@@ -1,4 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="java.util.List" %>
+<%@ page import="servlet.Item" %>
+<%@ page import="servlet.ItemStore" %>
 
 <!DOCTYPE html>
 <html>
@@ -10,8 +13,8 @@
 <body>
 
 <h1>商品一覧画面</h1>
+
 <p><a href="newItem.jsp">＋新規出品</a></p>
-<p>ログイン成功です。</p>
 
 <form method="get" action="itemList.jsp">
     カテゴリ：
@@ -40,22 +43,19 @@ String detail = request.getParameter("detail");
 if (category == null) category = "";
 if (detail == null) detail = "";
 
-String[][] items = {
-    {"Java基礎", "教科書", "プログラミング", "500円"},
-    {"ミニ冷蔵庫", "家具", "家電", "3000円"}
-};
+List<Item> items = ItemStore.getItems();
 
-for (String[] item : items) {
-    boolean matchCategory = category.equals("") || item[1].equals(category);
-    boolean matchDetail = detail.equals("") || item[2].equals(detail);
+for (Item item : items) {
+    boolean matchCategory = category.equals("") || item.getCategory().equals(category);
+    boolean matchDetail = detail.equals("") || item.getDetail().equals(detail);
 
     if (matchCategory && matchDetail) {
 %>
         <p>
-            <b><%= item[0] %></b><br>
-            カテゴリ：<%= item[1] %><br>
-            詳細：<%= item[2] %><br>
-            価格：<%= item[3] %><br>
+            <b><%= item.getName() %></b><br>
+            カテゴリ：<%= item.getCategory() %><br>
+            詳細：<%= item.getDetail() %><br>
+            価格：<%= item.getPrice() %><br>
             <a href="itemDetail">詳細を見る</a>
         </p>
         <hr>
