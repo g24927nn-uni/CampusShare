@@ -10,6 +10,7 @@
 <body>
 
 <h1>商品一覧画面</h1>
+<p><a href="newItem.jsp">＋新規出品</a></p>
 <p>ログイン成功です。</p>
 
 <form method="get" action="itemList.jsp">
@@ -55,6 +56,7 @@ for (String[] item : items) {
             カテゴリ：<%= item[1] %><br>
             詳細：<%= item[2] %><br>
             価格：<%= item[3] %><br>
+            <a href="itemDetail">詳細を見る</a>
         </p>
         <hr>
 <%
