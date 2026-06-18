@@ -16,14 +16,12 @@ public class NewItemServlet extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
 
-
-        String idStr = request.getParameter("id");
-        int id = Integer.parseInt(idStr);
-
         String name = request.getParameter("name");
         String category = request.getParameter("category");
         String detail = request.getParameter("description");
         String price = request.getParameter("price");
+
+        int id = ItemStore.getItems().size() + 1;
 
         Item item = new Item(id, name, category, detail, price);
         ItemStore.addItem(item);
