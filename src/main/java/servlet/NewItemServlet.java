@@ -18,7 +18,7 @@ public class NewItemServlet extends HttpServlet {
 
 
         String idStr = request.getParameter("id");
-        int id = Integer.parseInt(idStr);
+        int id = ItemStore.getItems().size() + 1;
 
         String name = request.getParameter("name");
         String category = request.getParameter("category");

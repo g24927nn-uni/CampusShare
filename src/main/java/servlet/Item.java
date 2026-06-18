@@ -8,7 +8,8 @@ public class Item {
     private String price;
 
     public Item(int id,String name, String category, String detail, String price) {
-        this.name = name;
+        this.id = id;
+    	this.name = name;
         this.category = category;
         this.detail = detail;
         this.price = price;
