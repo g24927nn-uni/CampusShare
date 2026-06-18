@@ -56,7 +56,7 @@ for (Item item : items) {
             カテゴリ：<%= item.getCategory() %><br>
             詳細：<%= item.getDetail() %><br>
             価格：<%= item.getPrice() %><br>
-            <a href="itemDetail">詳細を見る</a>
+			<a href="itemDetail?id=<%= item.getId() %>">詳細を見る</a>
         </p>
         <hr>
 <%
